@@ -13,20 +13,53 @@
 <body>
     
     <header>
-        <h1>Тестовый заголовок</h1>
+        <div class="container">
+            <h1>Тестовый заголовок</h1>
+            <nav>
+                <a href="#screen1">Screen 1</a>
+                <a href="#screen2">Screen 2</a>
+                <a href="#screen3">Screen 3</a>
+                <a href="#screen4">Screen 4</a>
+            </nav>
+        </div>
     </header>
 
     <main>
-        <h2>Lorem:</h2>
-        <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta voluptatum, hic beatae illo commodi nam?
-            Sunt optio assumenda accusantium qui sint quaerat praesentium. Quasi illo magnam, pariatur ad error inventore.
-        </p>
-        <img src="./img/welcome.jpg" alt="welcome">
+        <section class="screen" id="screen1">
+            <div class="container">
+                <h2>Screen 1</h2>
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta voluptatum, hic beatae illo commodi nam?
+                    Sunt optio assumenda accusantium qui sint quaerat praesentium. Quasi illo magnam, pariatur ad error inventore.
+                </p>
+                <picture>
+                    <source type="image/webp" srcset="./img/welcome.webp">
+                    <source type="image/jpeg" srcset="./img/welcome.jpg">
+                    <img src="./img/welcome.jpg" alt="welcome">
+                </picture>
+            </div>
+        </section>
+        <section class="screen parallax" id="screen2">
+            <div class="container">
+                <h2>Screen 2</h2>
+            </div>
+        </section>
+        <section class="screen" id="screen3">
+            <div class="container">
+                <h2>Screen 3</h2>
+            </div>
+        </section>
+        <section class="screen parallax" id="screen4">
+            <div class="container">
+                <h2>Screen 4</h2>
+            </div>
+        </section>
     </main>
 
     <footer>
-        <h2>@zharkovmikhail</h2>
+        <div class="container">
+            <h3>@zharkovmikhail</h3>
+        </div>
     </footer>
 
     <!-- inject:js -->

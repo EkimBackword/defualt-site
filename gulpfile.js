@@ -22,7 +22,9 @@ const node_modules = [
 const html = () => {
     var target = gulp.src('./src/**/*.html');
     var sources = gulp.src(['./dist/**/*.js', './dist/**/*.css'], {read: false});
-    return target.pipe(inject(sources))
+    return target.pipe(inject(sources, {
+            ignorePath: ['dist']
+        }))
         .pipe(validator())
         .pipe(gulp.dest('./dist'));
 };
@@ -86,5 +88,6 @@ gulp.task('watchImg', () => gulp.watch(['./src/**/*.{jpg,png,svg,gif}'], img));
 gulp.task('watchWebp', () => gulp.watch(['./src/**/*.{jpg,png}'], imgwebp));
 gulp.task('watchScripts', () => gulp.watch(['./src/**/*.ts'], scripts));
 
-exports.serve = gulp.parallel('watchHtml', 'watchStyles', 'watchImg', 'watchWebp', 'watchScripts');
+
+exports.serve = gulp.series(gulp.parallel('styles', 'img', 'imgwebp', 'scripts', 'node_modules'), 'html', gulp.parallel('watchHtml', 'watchStyles', 'watchImg', 'watchWebp', 'watchScripts'));
 exports.default = gulp.series(gulp.parallel('styles', 'img', 'imgwebp', 'scripts', 'node_modules'), 'html');

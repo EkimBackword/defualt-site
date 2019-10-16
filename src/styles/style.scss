@@ -1,3 +1,109 @@
 * {
     font-family: 'Roboto Condensed', sans-serif;
+    box-sizing: border-box;
 }
+
+a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #263238;
+    transition: all .2s;
+
+    &:hover {
+        letter-spacing: 1px;
+    }
+}
+
+header {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: 80px;
+    width: 100%;
+    z-index: 1000;
+
+    background: #263238;
+    color: #eceff1;
+
+    .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center; 
+        width: 100%;
+    }
+
+    a {
+        display: inline-block;
+        width: 120px;
+        color: #eceff1;
+        text-align: center;
+    }
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background: #263238;
+    color: #eceff1;
+}
+
+.container {
+    position: relative;
+    z-index: 200;
+    margin: 0 80px;
+}
+
+.screen {
+    position: relative;
+    min-height: 600px;
+    padding: 80px 8px;
+
+    img {
+        width: 600px;
+    }
+}
+
+.parallax {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: inset 0 0 20px 0px black;
+
+    .container {
+        color: #fff;
+    }
+
+    &::before {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #004d40;
+        z-index: 100;
+        opacity: .32;
+    }
+}
+
+#screen1 { background-color: #e0f2f1; }
+#screen2 { 
+    background-color: #004d40;
+    .no-webp & { background-image: url('../img/background-blur-clean-531880.jpg'); }
+    .webp & { background-image: url('../img/background-blur-clean-531880.webp'); }
+}
+#screen3 { background-color: #e0f2f1; }
+#screen4 { 
+    background-color: #004d40;
+    .no-webp & { background-image: url('../img/art-art-materials-background-1762851.jpg'); }
+    .webp & { background-image: url('../img/art-art-materials-background-1762851.webp'); }
+}
+
