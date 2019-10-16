@@ -34,7 +34,12 @@ const styles = () => {
     return gulp.src('./src/**/*.scss')
         .pipe(sassGlob())
         .pipe(sass({includePaths: ['node_modules']}).on('error', sass.logError))
-        .pipe(autoprefixer({cascade: false}))
+        .pipe(autoprefixer({
+            overrideBrowserslist: [
+                "last 10 version"
+            ],
+            cascade: false
+        }))
         .pipe(cleanCSS({compatibility: 'ie8'}))
         .pipe(gulp.dest('./dist'));
 };
